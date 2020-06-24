@@ -1,6 +1,5 @@
 import axios from "axios";
-import router from "../router";
-import { message, notification } from "ant-design-vue";
+import { message } from "ant-design-vue";
 import NProgress from "nprogress";
 /**
  * 请求前拦截
@@ -10,6 +9,8 @@ axios.interceptors.request.use(
   config => {
     // return config
     NProgress.start();
+    config.headers.Authorization =
+      "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1OTMwMjkyNzksInVzZXJfbmFtZSI6ImFkbWluIiwiYXV0aG9yaXRpZXMiOlsibnVsbCIsIlJPTEVfVVNFUiJdLCJqdGkiOiIzMDc1M2VmMy1jZDU3LTQwODctOGVhOC01YWE0NWE1MzhlOTEiLCJjbGllbnRfaWQiOiJjbGllbnQiLCJzY29wZSI6WyJyZWFkIiwid3JpdGUiXX0.AdHFafGAAJu-l6ltRIavXreLByUAK3I-QnTSEjx9GSw";
     // if (window.localStorage.getItem("token")) {
     //   if (config.url !== "/upload") {
     //     config.headers.Authorization = window.localStorage.getItem("token");
@@ -31,46 +32,16 @@ axios.interceptors.request.use(
 axios.interceptors.response.use(
   response => {
     NProgress.done();
-    if (response.data.status === -1) {
-      switch (response.data.errorMsg) {
-        case "0X0001":
-          message.warning("令牌解密异常");
-          break;
-        case "0X0002":
-          message.warning("令牌反序列化异常");
-          break;
-        case "0X0003":
-          message.warning("无效的请求标示");
-          break;
-        case "0X0004":
-          message.warning("令牌已过期");
-          router.push("/login");
-          break;
-        case "0X1001":
-          message.warning("无效的签名");
-          break;
-        case "0X1002":
-          message.warning("签名篡改");
-          break;
-        default:
-          notification["error"]({
-            message: "失败",
-            description: response.data.errorMsg
-          });
-      }
-      return response.data;
-    }
     return response.data;
   },
   error => {
-    if (error.response.status === 404) {
-      message.warning("请求接口不存在");
+    if (error.response.status === 401) {
+      message.warning("Unauthorized");
     } else if (error.response.status === 403) {
-      router.replace("/login");
-      window.localStorage.removeItem("token");
+      message.warning("Forbidden");
       return;
     } else if (error.response.status === 500) {
-      message.warning("内部服务器出错");
+      message.warning(error.response.data.message);
     }
     // 断网 或者 请求超时 状态
     if (!error.response) {

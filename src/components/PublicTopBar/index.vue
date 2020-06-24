@@ -4,7 +4,7 @@
       <a-col :xs="24" :sm="24" :md="18" :lg="18" :xl="18" class="panel-left">
         <a-input-search
           class="search"
-          placeholder="搜索"
+          placeholder="输入用户名搜索"
           style="width: 200px"
           @search="onSearch"
         />
@@ -20,15 +20,15 @@
             >{{ item.name }}</a-button
           >
         </div>
-        <a-button class="btn" @click="isAdvancedSearch = !isAdvancedSearch"
+        <!-- <a-button class="btn" @click="isAdvancedSearch = !isAdvancedSearch"
           >高级搜索</a-button
-        >
+        > -->
       </a-col>
       <a-col :xs="24" :sm="24" :md="6" :lg="6" :xl="6" class="panel-right">
         <slot name="panel-right"></slot>
       </a-col>
     </a-row>
-    <a-row v-if="isAdvancedSearch" style="padding:12px 0 14px">
+    <!-- <a-row v-if="isAdvancedSearch" style="padding:12px 0 14px">
       <a-col
         :xs="24"
         :sm="24"
@@ -40,7 +40,7 @@
         <slot name="advanced"></slot>
         <a-button type="primary">查询</a-button>
       </a-col>
-    </a-row>
+    </a-row> -->
   </div>
 </template>
 

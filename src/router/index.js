@@ -27,19 +27,24 @@ export const asyncRoutes = [
         component: () => import("@/views/Home.vue")
       },
       {
-        path: "/table",
-        name: "Table",
-        component: () => import("@/views/Table.vue")
+        path: "/user",
+        name: "user",
+        component: () => import("@/views/user/User.vue")
       },
       {
-        path: "/table/form",
+        path: "/user/form",
         name: "TableAddForm",
-        component: () => import("@/views/Add.vue")
+        component: () => import("@/views/user/Form.vue")
       },
       {
-        path: "/form",
-        name: "Form",
-        component: () => import("@/views/Form.vue")
+        path: "/report",
+        name: "Report",
+        component: () => import("@/views/report/Report.vue")
+      },
+      {
+        path: "/report/form",
+        name: "ReportForm",
+        component: () => import("@/views/report/Form.vue")
       },
       {
         path: "/infoForm",

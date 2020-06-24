@@ -5,6 +5,9 @@ import store from "./store";
 import "./plugins";
 import NProgress from "nprogress";
 import "nprogress/nprogress.css";
+import moment from "moment";
+import "moment/locale/zh-cn";
+moment.locale("zh-cn");
 
 router.beforeEach((to, from, next) => {
   NProgress.start();
