@@ -10,7 +10,7 @@ axios.interceptors.request.use(
     // return config
     NProgress.start();
     config.headers.Authorization =
-      "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1OTMwMjkyNzksInVzZXJfbmFtZSI6ImFkbWluIiwiYXV0aG9yaXRpZXMiOlsibnVsbCIsIlJPTEVfVVNFUiJdLCJqdGkiOiIzMDc1M2VmMy1jZDU3LTQwODctOGVhOC01YWE0NWE1MzhlOTEiLCJjbGllbnRfaWQiOiJjbGllbnQiLCJzY29wZSI6WyJyZWFkIiwid3JpdGUiXX0.AdHFafGAAJu-l6ltRIavXreLByUAK3I-QnTSEjx9GSw";
+      "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1OTQwODU4NTUsInVzZXJfbmFtZSI6ImFkbWluIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIiwiQURNSU4iXSwianRpIjoiZDc1NDkzMjctMWI2Ni00MGZlLWI2NDktYTQ3ZWI3OTVkNDY4IiwiY2xpZW50X2lkIjoiY2xpZW50Iiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl19.cK2O1rVfYWKe5lXl7rj-T5bO70pKNuSrT5ibOUVQOHs";
     // if (window.localStorage.getItem("token")) {
     //   if (config.url !== "/upload") {
     //     config.headers.Authorization = window.localStorage.getItem("token");

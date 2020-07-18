@@ -46,7 +46,7 @@
           </transition>
         </section>
         <a-layout-footer class="footer-copyright" style="textAlign: center">
-          Glasssix Web ©2020 Created by Glasssix Frontend Group
+          jieruimi Web ©2020 Created by jieruimi Frontend Group
         </a-layout-footer>
         <a-back-top :target="target" />
       </a-layout-content>

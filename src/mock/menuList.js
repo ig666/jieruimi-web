@@ -9,11 +9,11 @@ const list = [
     title: "用户列表",
     select: true
   },
-  {
-    key: "/report",
-    title: "报告列表",
-    select: true
-  },
+  // {
+  //   key: "/report",
+  //   title: "报告列表",
+  //   select: true
+  // },
   {
     key: "/map",
     title: "百度地图",

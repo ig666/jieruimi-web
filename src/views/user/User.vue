@@ -74,7 +74,7 @@ const columns = [
   {
     title: "操作",
     key: "action",
-    width: 200,
+    fixed: "right",
     scopedSlots: { customRender: "action" }
   }
 ];

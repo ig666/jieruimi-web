@@ -7,8 +7,10 @@ import NProgress from "nprogress";
 import "nprogress/nprogress.css";
 import moment from "moment";
 import "moment/locale/zh-cn";
+import SlideVerify from "vue-monoplasty-slide-verify";
 moment.locale("zh-cn");
 
+Vue.use(SlideVerify);
 router.beforeEach((to, from, next) => {
   NProgress.start();
   next();

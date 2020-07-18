@@ -76,13 +76,9 @@ const columns = [
     dataIndex: "inspectionItem"
   },
   {
-    title: "备注",
-    dataIndex: "remark"
-  },
-  {
     title: "操作",
     key: "action",
-    width: 200,
+    fixed: "right",
     scopedSlots: { customRender: "action" }
   }
 ];

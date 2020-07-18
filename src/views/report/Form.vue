@@ -9,24 +9,6 @@
           v-bind="formItemLayout"
           :rules="rules"
         >
-          <a-form-model-item label="服务商名称" prop="serviceProvider">
-            <a-input
-              v-model="form.serviceProvider"
-              placeholder="填写服务商名称"
-            >
-              <a-icon slot="prefix" type="bank" />
-            </a-input>
-          </a-form-model-item>
-          <a-form-model-item label="服务商电话" prop="phone">
-            <a-input v-model="form.phone" placeholder="服务商电话">
-              <a-icon slot="prefix" type="phone" />
-            </a-input>
-          </a-form-model-item>
-          <a-form-model-item label="服务人员" prop="server">
-            <a-input v-model="form.server" placeholder="填写服务人员">
-              <a-icon slot="prefix" type="user" />
-            </a-input>
-          </a-form-model-item>
           <a-form-model-item label="客户名称" prop="name">
             <a-input v-model="form.name" placeholder="填写客户名称">
               <a-icon slot="prefix" type="user" />
@@ -48,16 +30,6 @@
               <a-icon slot="prefix" type="home" />
             </a-input>
           </a-form-model-item>
-          <a-form-model-item
-            label="整体虫鼠患情况描述	"
-            prop="overallDescription"
-          >
-            <a-textarea
-              v-model="form.overallDescription"
-              placeholder="填写整体虫鼠患情况描述"
-              :auto-size="{ minRows: 3, maxRows: 5 }"
-            />
-          </a-form-model-item>
           <a-form-model-item label="随行人员" prop="accompanyPerson">
             <a-input v-model="form.accompanyPerson" placeholder="填写随行人员">
               <a-icon slot="prefix" type="user" />
@@ -68,12 +40,33 @@
               <a-icon slot="prefix" type="tool" />
             </a-input>
           </a-form-model-item>
-          <a-form-model-item label="备注	" prop="remark">
+          <a-form-model-item
+            label="整体虫鼠患情况描述	"
+            prop="overallDescription"
+          >
             <a-textarea
-              v-model="form.remark"
-              placeholder="填写备注"
+              v-model="form.overallDescription"
+              placeholder="填写整体虫鼠患情况描述"
               :auto-size="{ minRows: 3, maxRows: 5 }"
             />
+          </a-form-model-item>
+          <a-form-model-item label="服务商名称" prop="serviceProvider">
+            <a-input
+              v-model="form.serviceProvider"
+              placeholder="填写服务商名称"
+            >
+              <a-icon slot="prefix" type="bank" />
+            </a-input>
+          </a-form-model-item>
+          <a-form-model-item label="服务人员" prop="server">
+            <a-input v-model="form.server" placeholder="填写服务人员">
+              <a-icon slot="prefix" type="user" />
+            </a-input>
+          </a-form-model-item>
+          <a-form-model-item label="联系电话" prop="phone">
+            <a-input v-model="form.phone" placeholder="联系电话">
+              <a-icon slot="prefix" type="phone" />
+            </a-input>
           </a-form-model-item>
         </a-form-model>
       </a-col>
@@ -82,6 +75,9 @@
       <a-col :xs="20" :sm="24" :md="18" :lg="18" :xl="12" :offset="10">
         <a-button type="primary" @click="onSubmit">
           提交
+        </a-button>
+        <a-button type="primary" @click="addImg">
+          添加发现情况
         </a-button>
         <a-button @click="cancal" style="margin-left:2vw">
           取消
@@ -99,6 +95,7 @@ export default {
   name: "Form",
   data() {
     return {
+      show: false,
       id: "",
       labelCol: { span: 4 },
       wrapperCol: { span: 14 },
@@ -114,17 +111,9 @@ export default {
         checkArea: "",
         overallDescription: "",
         accompanyPerson: "",
-        inspectionItem: "",
-        remark: ""
+        inspectionItem: ""
       },
       rules: {
-        remark: [
-          {
-            required: false,
-            message: "请填写备注",
-            trigger: ["blur", "change"]
-          }
-        ],
         inspectionItem: [
           {
             required: false,
@@ -226,6 +215,9 @@ export default {
     }
   },
   methods: {
+    addImg() {
+      this.show = true;
+    },
     cancal() {
       this.$router.go(-1);
     },
