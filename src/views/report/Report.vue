@@ -36,8 +36,8 @@
               </a-tag>
             </span>
             <span slot="action" slot-scope="scope">
-              <a @click="add(scope.id)">编辑</a>
-              <a-divider type="vertical" />
+              <!-- <a @click="add(scope.id)">编辑</a>
+              <a-divider type="vertical" /> -->
               <a @click="detele(scope.id)">删除</a>
             </span>
           </a-table>
@@ -101,13 +101,13 @@ export default {
       data: [],
       columns,
       isShowTree: false,
-      topBarsBtns: [
-        {
-          name: "新增",
-          type: "primary",
-          click: this.add
-        }
-      ]
+      // topBarsBtns: [
+      //   {
+      //     name: "新增",
+      //     type: "primary",
+      //     click: this.add
+      //   }
+      // ]
     };
   },
   methods: {
