@@ -57,6 +57,7 @@
 import { AppMenu, NavBar, TagsView } from "./components";
 import { mapGetters, mapActions } from "vuex";
 import Media from "./mixin/Media";
+import axios from "axios";
 export default {
   name: "Layout",
   components: {
@@ -105,6 +106,29 @@ export default {
     },
     onBreakpoint(broken) {
       console.log(broken);
+    }
+  },
+  mounted() {
+    const code = this.$route.query.code
+    if (code) {
+      axios.request({
+        url: "/oauth/token",
+        method: "post",
+        params: {
+          grant_type: "authorization_code",
+          code,
+            redirect_uri: `http://localhost:3000/`
+        },
+        baseURL: "/login",
+        headers: {
+          "authorization": "Basic Y2xpZW50OnN1bi4xMzE0",
+          "content-type": "application/json"
+        }
+      }).then(value => {
+        window.localStorage.setItem("authToken", value.data.access_token)
+      }).catch(reason => {
+        console.log(reason)
+      })
     }
   }
 };

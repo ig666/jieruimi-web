@@ -1,0 +1,8 @@
+**
+
+!dist
+!/dist/**
+!nginx.conf
+!Dockerfile
+!4202219_jieruimi.top.key
+!4202219_jieruimi.top.pem
