@@ -35,7 +35,7 @@ request.interceptors.response.use(
     error => {
       if (error.response.status === 401) {
         localStorage.setItem('authToken', null)
-        window.location.href = `https://jieruimi.top/oauth/authorize?client_id=client&redirect_uri=http://localhost:3000/&response_type=code`;
+        window.location.href = `https://jieruimi.top/login/oauth/authorize?client_id=client&redirect_uri=https://jieruimi.top/&response_type=code`;
       } else if (error.response.status === 403) {
         message.warning("Forbidden");
         return;

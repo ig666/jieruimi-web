@@ -117,7 +117,7 @@ export default {
         params: {
           grant_type: "authorization_code",
           code,
-            redirect_uri: `http://localhost:3000/`
+            redirect_uri: `https://jieruimi.top/`
         },
         baseURL: "/login",
         headers: {
