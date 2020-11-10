@@ -54,6 +54,11 @@ export const asyncRoutes = [
         path: "/map",
         name: "Map",
         component: () => import("@/views/Map.vue")
+      },
+      {
+        path: "/vedio",
+        name: "Vedio",
+        component: () => import("@/views/Vedio.vue")
       }
     ]
   }

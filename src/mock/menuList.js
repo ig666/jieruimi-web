@@ -18,6 +18,11 @@ const list = [
     key: "/map",
     title: "百度地图",
     select: true
+  },
+  {
+    key: "/vedio",
+    title: "视频插件",
+    select: true
   }
 ];
 
