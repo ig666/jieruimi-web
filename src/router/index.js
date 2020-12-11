@@ -10,6 +10,11 @@ export const asyncRoutes = [
     component: () => import("@/views/404.vue")
   },
   {
+    path: "/3d-shijicheng",
+    name: "3d",
+    component: () => import("@/views/3d.vue")
+  },
+  {
     path: "/401",
     name: "401",
     component: () => import("@/views/401.vue")
@@ -59,11 +64,6 @@ export const asyncRoutes = [
         path: "/vedio",
         name: "Vedio",
         component: () => import("@/views/Vedio.vue")
-      },
-      {
-        path: "//3d-shijicheng",
-        name: "3d",
-        component: () => import("@/views/3d.vue")
       }
     ]
   }

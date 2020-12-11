@@ -8,6 +8,9 @@ import "nprogress/nprogress.css";
 import moment from "moment";
 import "moment/locale/zh-cn";
 import SlideVerify from "vue-monoplasty-slide-verify";
+import dataV from "@jiaminghi/data-view";
+
+Vue.use(dataV);
 moment.locale("zh-cn");
 
 Vue.use(SlideVerify);
