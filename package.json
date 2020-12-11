@@ -14,7 +14,7 @@
     "core-js": "^3.6.4",
     "echarts": "^4.8.0",
     "fastclick": "^1.0.6",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "nprogress": "^0.2.0",
     "v-charts": "^1.19.0",
     "vue": "^2.6.11",
