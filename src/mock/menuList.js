@@ -23,6 +23,11 @@ const list = [
     key: "/vedio",
     title: "视频插件",
     select: true
+  },
+  {
+    key: "/3d-shijicheng",
+    title: "3D可视化",
+    select: true
   }
 ];
 
